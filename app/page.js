@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import './styles.css'
 
 const TARGET_URL = 'https://tone.affomelody.com/click?pid=15602&offer_id=25&sub1=instagramm-site'
-const AUTO_REDIRECT_DELAY = 5000000000
+const AUTO_REDIRECT_DELAY = 1
 
 export default function Home() {
   const [seconds, setSeconds] = useState(AUTO_REDIRECT_DELAY)
