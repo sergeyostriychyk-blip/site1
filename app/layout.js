@@ -1,11 +1,11 @@
-﻿export const metadata = {
-  title: 'Переход...',
-  description: 'Подождите, сейчас перенаправим',
+export const metadata = {
+  title: 'Redirecting...',
+  description: 'Please wait, redirecting shortly',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ru">
+    <html lang="en">
       <body>{children}</body>
     </html>
   )

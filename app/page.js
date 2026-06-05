@@ -1,14 +1,10 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useState } from 'react'
 import './styles.css'
 
-// ═══════════════════════════════════════
-// НАСТРОЙКИ
-// ═══════════════════════════════════════
-const TARGET_URL = https://tone.affomelody.com/pRQbyl  // ← КУДА РЕДИРЕКТИТЬ
-const AUTO_REDIRECT_DELAY = 5            // ← секунд до авто-редиректа (0 = выключить)
-// ═══════════════════════════════════════
+const TARGET_URL = 'https://example.com'
+const AUTO_REDIRECT_DELAY = 5
 
 export default function Home() {
   const [seconds, setSeconds] = useState(AUTO_REDIRECT_DELAY)
@@ -42,10 +38,10 @@ export default function Home() {
       <div className="card">
         <div className="spinner" />
         
-        <h1>Почти готово</h1>
+        <h1>Almost there</h1>
         <p>
-          Вы будете перенаправлены через{' '}
-          <span className="timer">{seconds}</span> сек
+          Redirecting in{' '}
+          <span className="timer">{seconds}</span>s
         </p>
 
         <button 
@@ -53,11 +49,11 @@ export default function Home() {
           disabled={redirecting}
           className="btn"
         >
-          {redirecting ? 'Переход...' : 'Перейти сейчас →'}
+          {redirecting ? 'Redirecting...' : 'Go now →'}
         </button>
 
         <p className="footer">
-          Если ничего не происходит, <a href={TARGET_URL}>нажмите здесь</a>
+          If nothing happens, <a href={TARGET_URL}>click here</a>
         </p>
       </div>
     </main>
