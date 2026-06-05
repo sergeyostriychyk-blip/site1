@@ -37,18 +37,6 @@ body {
   z-index: 1;
 }
 
-.card {
-  background: rgba(26, 26, 46, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(42, 42, 78, 0.6);
-  border-radius: 16px;
-  padding: 48px 32px;
-  max-width: 420px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-}
-
 .spinner {
   width: 48px;
   height: 48px;
