@@ -18,7 +18,9 @@ export default function Home() {
         if (prev <= 1) {
           clearInterval(timer)
           setRedirecting(true)
-          window.location.href = TARGET_URL
+          if (typeof window !== 'undefined') {
+            window.location.href = TARGET_URL
+          }
           return 0
         }
         return prev - 1
@@ -30,32 +32,47 @@ export default function Home() {
 
   const handleRedirect = () => {
     setRedirecting(true)
-    window.location.href = TARGET_URL
+    if (typeof window !== 'undefined') {
+      window.location.href = TARGET_URL
+    }
   }
 
   return (
-    <main className="container">
-      <div className="card">
-        <div className="spinner" />
-        
-        <h1>Almost there</h1>
-        <p>
-          Redirecting in{' '}
-          <span className="timer">{seconds}</span>s
-        </p>
+    <>
+      {/* ═══ ВИДЕО ФОН ═══ */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="video-bg"
+      >
+        <source src="/bg.mp4" type="video/mp4" />
+      </video>
 
-        <button 
-          onClick={handleRedirect} 
-          disabled={redirecting}
-          className="btn"
-        >
-          {redirecting ? 'Redirecting...' : 'Go now →'}
-        </button>
+      <main className="container">
+        <div className="card">
+          <div className="spinner" />
 
-        <p className="footer">
-          If nothing happens, <a href={TARGET_URL}>click here</a>
-        </p>
-      </div>
-    </main>
+          <h1>Almost there</h1>
+          <p>
+            Redirecting in{' '}
+            <span className="timer">{seconds}</span>s
+          </p>
+
+          <button
+            onClick={handleRedirect}
+            disabled={redirecting}
+            className="btn"
+          >
+            {redirecting ? 'Redirecting...' : 'Go now →'}
+          </button>
+
+          <p className="footer">
+            If nothing happens, <a href={TARGET_URL}>click here</a>
+          </p>
+        </div>
+      </main>
+    </>
   )
 }
