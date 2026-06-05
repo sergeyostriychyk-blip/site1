@@ -6,12 +6,14 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0f0f23;
   color: #fff;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* ═══ ГИФКА НА ФОН ═══ */
+  background: url('https://www.redgifs.com/watch/selfreliantpleasantduckbillcat') center/cover no-repeat fixed;
+  background-color: #0f0f23; /* fallback пока грузится */
 }
 
 .container {
@@ -21,21 +23,23 @@ body {
   justify-content: center;
 }
 
+/* ... остальной CSS без изменений ... */
 .card {
-  background: #1a1a2e;
-  border: 1px solid #2a2a4e;
+  background: rgba(26, 26, 46, 0.85); /* полупрозрачный чтобы фон было видно */
+  backdrop-filter: blur(10px); /* размытие за карточкой */
+  border: 1px solid rgba(42, 42, 78, 0.6);
   border-radius: 16px;
   padding: 48px 32px;
   max-width: 420px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 .spinner {
   width: 48px;
   height: 48px;
-  border: 3px solid #2a2a4e;
+  border: 3px solid rgba(42, 42, 78, 0.6);
   border-top-color: #6366f1;
   border-radius: 50%;
   margin: 0 auto 24px;
@@ -55,7 +59,7 @@ h1 {
 
 p {
   font-size: 15px;
-  color: #94a3b8;
+  color: #cbd5e1;
   line-height: 1.5;
   margin-bottom: 24px;
 }
@@ -92,7 +96,7 @@ p {
 .footer {
   margin-top: 20px;
   font-size: 13px;
-  color: #64748b;
+  color: #94a3b8;
 }
 
 .footer a {
